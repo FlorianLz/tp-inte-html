@@ -1,0 +1,53 @@
+.newArrival{
+    padding: 50px 0;
+    &__title{
+        text-align: center;
+        margin-bottom: 20px;
+        @include flex(row, center, center);
+        column-gap: 10px;
+        h2{
+            font-size: 2.4rem;
+            font-weight: 600;
+            position: relative;
+            span{
+                color: $blue;
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                display: block;
+                width: 10px;
+                height: 10px;
+                border-radius: 300px;
+                background-color: $orange;
+                top: 50%;
+                transform: translateY(-50%);
+                right: -15px;
+            }
+        }
+    }
+    &__cards{
+        @include flex(row, space-between, center);
+        row-gap: 50px;
+        &__single{
+            &-container{
+                border: 1px solid lightgray;
+                padding: 50px;
+                img{
+                    width: 50px;
+                    height: 50px;
+                    object-fit: contain;
+                }
+            }
+            h3{
+                padding: 0.5rem 0;
+                text-align: center;
+                text-transform: uppercase;
+            }
+        }
+        @media screen and (max-width: 768px){
+            flex-direction: column;
+            row-gap: 20px;
+        }
+    }
+}
